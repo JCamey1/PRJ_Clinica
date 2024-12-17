@@ -1,0 +1,108 @@
+body
+{
+    
+    margin: 0; /* Sin margen */
+    border-top:  10px solid #7b9efe; /* Un "margen" coloreado */
+   
+    padding: 0;
+    background: linear-gradient(to top, #5f8aff, #7b9efe); /* Degradado de izquierda a derecha */
+    height: 100vh; /* Asegura que cubra toda la pantalla */
+      
+      
+}
+        
+
+/* Cambiar el estilo del texto de bienvenida */
+.mensaje-de-bienvenida {
+   
+    font-family: "impact", sans-serif; /* Cambia la fuente */
+    font-size: 65px; /* Tamaño del texto */
+    color: rgb(255, 255, 255); /* Color del texto */
+    text-align: center; /* Alineación del texto */
+    margin-top: 55px; /* Espaciado superior */
+  }
+  
+  /* Cambiar el estilo del botón */
+  .boton-de-ingreso {
+    font-family: "impact", sans-serif; /* Cambia la fuente */
+    font-size: 35px; /* Tamaño del texto */
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Relleno dentro del botón */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    border-radius: 5px; /* Bordes redondeados */
+    
+    position: absolute; /* Botón posicionado de manera absoluta */
+    top: 75%; /* Ajusta según sea necesario */
+    left: 47%; /* Ajusta según sea necesario */
+    transform: translate(-50%, -50%); /* Centra el botón opcionalmente */
+      
+  }
+
+  .boton-de-ingreso:active {
+    transform: translate(-50%, -50%) scale(0.95); /* Escala el botón para simular el efecto de hundimiento */
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra interna para el efecto de presión */
+  }
+  
+  /* label1*/
+  .instruccion-ingreso1 {
+    font-family: "Times New Roman", serif;
+    font-size: 50px;
+    color: rgb(237, 231, 231);
+    text-align: left;
+
+    position: absolute; /* Botón posicionado de manera absoluta */
+    top: 35%; /* Ajusta según sea necesario */
+    left: 35.5%; /* Ajusta según sea necesario */
+    transform: translate(-50%, -50%); /* Centra el botón opcionalmente */
+  }
+
+  /* label2 */
+  .instruccion-ingreso2 
+  {
+    font-family: "Times New Roman", serif;
+    font-size: 50px;
+    color: rgb(237, 231, 231);
+    text-align: left;
+
+    position: absolute; /* Botón posicionado de manera absoluta */
+    top: 45%; /* Ajusta según sea necesario */
+    left: 33%; /* Ajusta según sea necesario */
+    transform: translate(-50%, -50%); /* Centra el botón opcionalmente */
+  }
+
+  /*editar estilo de los textbox1*/
+  .textbox-user
+  {
+   
+        width: 300px;
+        padding: 10px;
+        margin: 10px 0;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+
+        position: absolute; /* Botón posicionado de manera absoluta */
+        top: 34.5%; /* Ajusta según sea necesario */
+        left: 55%; /* Ajusta según sea necesario */
+        transform: translate(-50%, -50%); /* Centra el botón opcionalmente */
+  }
+
+  .textbox-pass
+  {
+   
+        width: 300px;
+        padding: 10px;
+        margin: 10px 0;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        position: absolute; /* Botón posicionado de manera absoluta */
+        top: 44.5%; /* Ajusta según sea necesario */
+        left: 55%; /* Ajusta según sea necesario */
+        transform: translate(-50%, -50%); /* Centra el botón opcionalmente */
+  }
+
+  
+  
