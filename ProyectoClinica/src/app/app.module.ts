@@ -6,8 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { IngresoComponent } from './login/ingreso/ingreso.component';
-
-
+import { servicios} from './Servicios/servicios.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const rutas:Routes=
@@ -27,11 +27,14 @@ const rutas:Routes=
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     RouterModule.forRoot(rutas),
     BrowserAnimationsModule,
 
   ],
-  providers: [],
+  providers: [
+    servicios
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
