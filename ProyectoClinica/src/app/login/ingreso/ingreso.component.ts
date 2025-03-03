@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { servicios} from 'src/app/Servicios/servicios.service';
+import {FormsModule} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-ingreso',
@@ -7,8 +9,14 @@ import { servicios} from 'src/app/Servicios/servicios.service';
   styleUrls: ['./ingreso.component.css']
 })
 export class IngresoComponent implements OnInit {
-
-  constructor(private servicios: servicios) { }
+  userForm: FormGroup;
+  hide = false;
+  constructor(private servicios: servicios) {
+    this.userForm = new FormGroup({
+      usuario: new FormControl('', Validators.required),
+      contraseña: new FormControl('', Validators.required)
+    });
+   }
   usuario: any;
   mostrarInformacion: any;
 

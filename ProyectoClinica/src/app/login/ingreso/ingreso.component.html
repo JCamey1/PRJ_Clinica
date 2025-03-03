@@ -1,16 +1,32 @@
 
 
 <body>  
-    <p class="mensaje-de-bienvenida">CLINICA OFTALMOLOGICA EL ANGEL</p>
+  <!--<p class="mensaje-de-bienvenida">CLINICA OFTALMOLOGICA EL ANGEL</p>
     <button class="boton-de-ingreso" (click)="ingreso()"> INGRESAR  </button>
     <h1 class=" instruccion-ingreso1"> Usuario: </h1>
     <h2 class=" instruccion-ingreso2"> Contraseña:  </h2>
 
 <input class= "textbox-user" type="text" placeholder="Escribe aquí">
-<input class= "textbox-pass" type="password" placeholder="Escribe aquí">
+<input class= "textbox-pass" type="password" placeholder="Escribe aquí">-->
 
-
-
+<div>
+    <h2>Inicio Sesion</h2>
+    <form [formGroup]="userForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Ingrese su Usuario</mat-label>
+            <input matInput formControlName="usuario">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+              <mat-label>Ingrese su contraseña</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="contraseña">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+        </mat-form-field>
+        <input type="submit" name="sumbit" value="INICIAR SESION" (click)="ingreso()">
+        <input type="submit" name="sumbit" value="REGISTRARSE" (click)="ingreso()">
+    </form>
+</div>
 
 
 </body>
