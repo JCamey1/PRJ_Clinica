@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { servicios} from 'src/app/Servicios/servicios.service';
 import {FormsModule} from '@angular/forms';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-ingreso',
@@ -9,13 +11,17 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./ingreso.component.css']
 })
 export class IngresoComponent implements OnInit {
-  userForm: FormGroup;
+  formData =   {
+    username: '',
+    password: '',
+    rememberMe: false
+  };
+  
+  showPassword = false;
+
   hide = false;
-  constructor(private servicios: servicios) {
-    this.userForm = new FormGroup({
-      usuario: new FormControl('', Validators.required),
-      contraseña: new FormControl('', Validators.required)
-    });
+  constructor(private servicios: servicios, private router: Router) {
+    
    }
   usuario: any;
   mostrarInformacion: any;
@@ -27,10 +33,24 @@ export class IngresoComponent implements OnInit {
 
   async ingreso()
   {
+    console.log(" Form data ", this.formData)
+    console.log("Data de usuario-login" , this.formData.username)
     console.log("pepe le gusta r6");
-    this.usuario = await this.servicios.obtenerUsuarioById(1).toPromise(); //se consume servicio definido en la clase servicios.service.ts
-    console.log("informacion:", this.usuario);
+    //this.usuario = await this.servicios.obtenerUsuarioById(1).toPromise(); //se consume servicio definido en la clase servicios.service.ts
+    //console.log("informacion:", this.usuario);
+    //this.router.navigate(['menu']);
   }
 
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
+
+  onSubmit(form: NgForm): void {
+    if (form.valid) {
+      console.log('Form submitted:', this.formData);
+      // Aquí iría la lógica de autenticación
+    }
+  }
 
 }

@@ -16,12 +16,18 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {FormsModule} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MenuComponent } from './menu/menu/menu.component';
 
 const rutas:Routes=
 [
 {
   path:'login',
   component:IngresoComponent 
+},
+
+{
+  path: 'menu',
+  component:MenuComponent
 }
 
 ]
@@ -29,7 +35,8 @@ const rutas:Routes=
 @NgModule({
   declarations: [
     AppComponent,
-    IngresoComponent
+    IngresoComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
